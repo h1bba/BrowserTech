@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-regular.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-italic.woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-demi.woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-bold.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-bolditalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    --bg-yellow: #ffc917;
+    --ns-bluedark: #003082;
+    --ns-bluelight: #0063d3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: NS Sans, Segoe UI, Myriad, Verdana, sans-serif;
+
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-yellow);
+}
+
+main>h1 {
+    color: var(--ns-bluedark);
+    text-align: center;
+}
+
+main>section {
+    margin: auto;
+    background-color: white;
+    width: 80vw;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.disclaimer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+
+    text-align: center;
+    display: block;
+    background-color: var(--ns-bluedark);
+    color: white;
+}
