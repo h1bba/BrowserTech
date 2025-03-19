@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: "NS Sans";
     src: url("../fonts/nssans-regular.woff2");
     font-weight: normal;
@@ -31,12 +31,15 @@
     src: url("../fonts/nssans-bolditalic.woff2");
     font-weight: bold;
     font-style: italic;
-}
+} */
 
 :root {
     --bg-yellow: #ffc917;
     --ns-bluedark: #003082;
     --ns-bluelight: #0063d3;
+
+    --offwhite: #e9e9e9;
+    --inputgrey: #e0e0e0;
 }
 
 * {
@@ -53,7 +56,7 @@ body {
 
     padding: 0;
     margin: 0;
-    background-color: var(--bg-yellow);
+    background-color: var(--offwhite);
 }
 
 main>h1 {
@@ -63,13 +66,134 @@ main>h1 {
 
 main>section {
     margin: auto;
-    background-color: white;
+    /* background-color: white; */
     width: 80vw;
 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    padding: 1em;
+
+
+    @media (min-width: 900px) {
+        fieldset {
+            display: grid;
+            grid-template-columns: 0.5fr 4fr 3fr;
+            grid-gap: 1em;
+            border: none;
+        }
+
+        legend {
+            grid-column: 1 / 2;
+        }
+
+        label {
+            /* grid-column: 3; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset:nth-of-type(2) label {
+            display: flex;
+            flex-direction: row;
+        }
+
+    }
+}
+
+fieldset {
+    border: none;
+    height: min-content;
+
+    legend {
+        margin-top: .5em;
+        margin-bottom: .5em;
+        font-weight: 600;
+        color: var(--ns-bluedark);
+        font-size: 1.25em;
+    }
 
 }
+
+/* //////////////////// */
+/* container styling 🖼 */
+/* //////////////////// */
+.vraag1a, .vraag1b, .vraag1c, .vraag2a, .vraag2b, .vraag2c, .vraag3a {
+    box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.3);
+    background-color: white;
+    margin: 2em 0 2em 0;
+    padding: 1em;
+}
+
+input[type="text"] {
+    max-width: 12em;
+    border: rgba(0, 0, 0, 0.2);
+    background-color: var(--inputgrey);
+    padding: 0.5em 0 .5em 0;
+
+}
+
+.vraag1a fieldset {
+
+    &:nth-of-type(1) label {
+        display: inline-flex;
+        flex-direction: column;
+        /* gap: 1em; */
+
+    }
+}
+
+/* //////////////////// */
+/* Labels naast elkaar zetten */
+/* //////////////////// */
+.vraag2a label, .vraag2b label, .vraag3a label {
+    display: flex;
+    gap: 0.7em;
+    padding: 0.3em 0 0.3em 0;
+}
+
+
+.radiobuttons label {
+    display: inline-flex;
+    flex-direction: row;
+    /* gap: 0.3em; */
+}
+
+/* //////////////////// */
+/* verzend knop */
+/* //////////////////// */
+input[type="submit"] {
+    padding: 1em 2em 1em 2em;
+    background-color: var(--ns-bluelight);
+    color: var(--offwhite);
+    box-shadow: none;
+    border: none;
+}
+
+input[type="date"], input[type="number"] {
+    padding: 1em 2em 1em 2em;
+
+    border: none;
+    background-color: var(--inputgrey);
+}
+
+select#aantalverkrijgers {
+    border: none;
+    padding: 1em 2em 1em 2em;
+
+}
+
+
+#extravragen {
+    display: none;
+    margin-top: 2em;
+    padding: 1em;
+    background-color: var(--inputgrey);
+    opacity: 0;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
 
 .disclaimer {
     padding-top: 1em;
@@ -80,4 +204,18 @@ main>section {
     display: block;
     background-color: var(--ns-bluedark);
     color: white;
+}
+
+input:user-invalid {
+    color: red;
+    outline: 2px solid red;
+}
+
+input[type="radio"]:user-invalid {
+    outline: 2px solid red;
+}
+
+input[type="radio"]:user-valid {
+    /* outline: 2px solid green; */
+    accent-color: green;
 }
