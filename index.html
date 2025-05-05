@@ -1,342 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browser Tech</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
 
-<body>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
 
-    <p class="disclaimer">Dit is een schoolproject voor de minor Web Development & Design aan het HvA!</p>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <p class="disclaimer">
+      Dit is een schoolproject voor de minor Web Development & Design aan het
+      HvA! Dit is niet echt!
+    </p>
     <main>
-        <h1>
-            Formulier voor de belasting
-        </h1>
-        <section>
-            <h2>1 Gegevens van overledene</h2>
+      <h1>Formulier voor de belasting (schoolproject)</h1>
+      <section>
+        <h2>1 Gegevens van overledene</h2>
 
-            <form method="post" action="">
-                <div class="vraag1a">
-                    <fieldset>
-                        <legend>1a Vul hier de gegevens in van de overledene.</legend>
-                        <label>
-                            Voornaam
-                            <input type="text" name="firstname" required>
-                        </label>
+        <form method="post" action="">
+          <div class="vraag1a">
+            <fieldset>
+              <legend>1a Vul hier de gegevens in van de overledene.</legend>
+              <label>
+                Voornaam
+                <input type="text" name="firstname" required />
+              </label>
 
-                        <label>
-                            Tussen-voegsel(s)
-                            <input type="text" name="middlename">
-                        </label>
+              <label>
+                Tussen-voegsel(s)
+                <input type="text" name="middlename" />
+              </label>
 
-                        <label>
-                            Achternaam
-                            <input type="text" name="surname" required>
-                        </label>
+              <label>
+                Achternaam
+                <input type="text" name="surname" required />
+              </label>
+            </fieldset>
+          </div>
 
-                    </fieldset>
-                </div>
+          <div class="vraag1b">
+            <fieldset>
+              <legend>
+                1b Was de overledene getrouwd of had de overledene een
+                geregistreerd partner op het moment van overlijden?
+              </legend>
 
-                <div class="vraag1b">
+              <label>
+                <input type="radio" name="getrouwd" value="nee" required />
+                Nee
+              </label>
 
-                    <fieldset>
-                        <legend>1b Was de overledene getrouwd of had de overledene een
-                            geregistreerd partner op het moment van overlijden?</legend>
+              <label>
+                <input type="radio" name="getrouwd" value="ja" required />
+                Ja
+              </label>
 
-                        <label>
-                            <input type="radio" name="getrouwd" value="nee" required>
-                            Nee
-                        </label>
+              <!-- conditioneel showen -->
+              <div id="extravragen">
+                <legend>
+                  Hadden de overledene en diens echtgenoot of geregistreerd
+                  partner huwelijkse of partner schaps- voorwaarden laten
+                  vastleggen in een notariële akte?
+                </legend>
+                <label>
+                  <input type="radio" name="geregistreerd" value="nee" />
+                  Nee
+                </label>
 
-                        <label>
-                            <input type="radio" name="getrouwd" value="ja" required>
-                            Ja
-                        </label>
+                <label>
+                  <input type="radio" name="geregistreerd" value="ja" />
+                  Ja Stuur een kopie van de akte mee met de aangifte.
+                  <input type="file" name="geregistreerd" />
+                </label>
 
+                <legend>
+                  Hadden de overledene en diens partner een finaal
+                  verrekenbeding?
+                </legend>
+                <label
+                  >Nee
+                  <input type="radio" name="verrekenbeding" value="nee" />
+                </label>
 
+                <label
+                  >Ja
+                  <input type="radio" name="verrekenbeding" value="ja" />
+                </label>
 
+                <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+                <input
+                  type="date"
+                  name="huwelijkdatum"
+                  value=""
+                  min="1900-01-01"
+                  max="2025-12-31"
+                />
+              </div>
+            </fieldset>
+          </div>
 
+          <div class="vraag1c">
+            <fieldset>
+              <legend>1C Had de overledene kinderen?</legend>
+              <label>
+                <input type="radio" name="kinderen" value="nee" required />
+                Nee
+              </label>
 
-                        <!-- conditioneel showen -->
-                        <div id="extravragen">
-                            <legend>Hadden de overledene en diens echtgenoot of
-                                geregistreerd partner huwelijkse of partner schaps-
-                                voorwaarden laten vastleggen in een notariële akte?</legend>
-                            <label>
-                                <input type="radio" name="geregistreerd" value="nee">
-                                Nee
-                            </label>
+              <label>
+                <input type="radio" name="kinderen" value="ja" required />
+                Ja
+              </label>
 
-                            <label>
-                                <input type="radio" name="geregistreerd" value="ja">
-                                Ja Stuur een kopie van de akte mee met de aangifte.
-                                <input type="file" name="geregistreerd">
-                            </label>
+              <!-- conditioneel showen -->
+              <div id="extravragen1c">
+                <legend>
+                  Is 1 van deze kinderen eerder overleden dan de overledene voor
+                  wie u nu aangifte doet?
+                </legend>
+                <label>
+                  <input type="radio" name="kindoverleden" value="nee" />
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="kindoverleden" value="ja" />
+                  Ja
+                </label>
 
-                            <legend>Hadden de overledene en diens partner een finaal
-                                verrekenbeding?</legend>
-                            <label>Nee
-                                <input type="radio" name="verrekenbeding" value="nee">
-                            </label>
+                <!-- conditioneel showen -->
+                <legend>Had dit overleden kind zelf kinderen?</legend>
 
-                            <label>Ja
-                                <input type="radio" name="verrekenbeding" value="ja">
-                            </label>
+                <label>
+                  <input type="radio" name="kleinkinderen" value="nee" />
+                  Nee
+                </label>
 
-                            <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
-                            <input type="date" name="huwelijkdatum" value="" min="1900-01-01" max="2025-12-31" />
-                        </div>
+                <label>
+                  <input type="radio" name="kleinkinderen" value="ja" />
+                  Ja
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <h2>2 Gegevens verkrijgers</h2>
+          <div class="vraag2a">
+            <fieldset>
+              <legend>
+                2a Vul de gegevens in van de persoon of instelling.
+              </legend>
+              <label>
+                Aantal verkrijgers
+                <select id="aantalverkrijgers" required>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </label>
 
+              <label>
+                Burgerservicenummer persoon
+                <input
+                  type="text"
+                  id="bsn"
+                  name="bsn"
+                  maxlength="9"
+                  pattern="\d{9}"
+                  placeholder="123456789 (voorbeeld)"
+                  required
+                />
+              </label>
 
-                    </fieldset>
-                </div>
+              <label>
+                Voornaam
+                <input type="text" name="firstname" required />
+              </label>
 
-                <div class="vraag1c">
-                    <fieldset>
-                        <legend>1C Had de overledene kinderen?</legend>
-                        <label>
-                            <input type="radio" name="kinderen" value="nee" required>
-                            Nee
-                        </label>
+              <label>
+                Tussen-voegsel(s)
+                <input type="text" name="middlename" />
+              </label>
+              <label>
+                Achternaam
+                <input type="text" name="surname" required />
+              </label>
 
-                        <label>
-                            <input type="radio" name="kinderen" value="ja" required>
-                            Ja
-                        </label>
+              <label>
+                Geboortedatum
+                <input
+                  type="date"
+                  name="geboortedatum"
+                  min="1900-01-01"
+                  max="2025-12-31"
+                  required
+                />
+              </label>
+            </fieldset>
+          </div>
+          <div class="vraag2b">
+            <fieldset>
+              <legend>2b Adresgegevens</legend>
+              <p>Adres in Nederland</p>
 
-                        <!-- conditioneel showen -->
-                        <legend>
-                            Is 1 van deze kinderen eerder overleden dan de
-                            overledene voor wie u nu aangifte doet?
-                        </legend>
-                        <label>
-                            <input type="radio" name="kindoverleden" value="nee">
-                            Nee
-                        </label>
-                        <label>
-                            <input type="radio" name="kindoverleden" value="ja">
-                            Ja
-                        </label>
+              <label>
+                Straatnaam
+                <input type="text" name="straatnaam" required />
+              </label>
 
+              <label>
+                Huisnummer en toevoeging
+                <input type="text" name="huisnummer" required />
+              </label>
 
+              <label>
+                Postcode
+                <input type="text" name="postcode" required />
+              </label>
 
-                        <!-- conditioneel showen -->
-                        <legend>
-                            Had dit overleden kind zelf kinderen?
-                        </legend>
+              <label>
+                Plaats
+                <input type="text" name="plaats" required />
+              </label>
 
-                        <label>
-                            <input type="radio" name="kleinkinderen" value="nee">
-                            Nee
+              <legend>Heeft u een Adres in het buitenland?</legend>
+              <div class="radiobuttons">
+                <label>
+                  <input type="radio" name="buitenland" value="ja" required />
+                  Nee
+                </label>
 
-                        </label>
+                <label>
+                  <input type="radio" name="buitenland" value="nee" required />
+                  Ja
+                </label>
+              </div>
 
-                        <label>
-                            <input type="radio" name="kleinkinderen" value="ja">
-                            Ja
+              <!-- conditioneel showen -->
+              <div id="buitenlandadres">
+                <label>
+                  Straatnaam
+                  <input type="text" name="straatnaam" />
+                </label>
 
-                        </label>
-                    </fieldset>
-                </div>
-                <h2>2 Gegevens verkrijgers</h2>
-                <div class="vraag2a">
-                    <fieldset>
-                        <legend>2a Vul de gegevens in van de persoon of instelling.</legend>
-                        <label>
-                            Aantal verkrijgers
-                            <select id="aantalverkrijgers" required>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
+                <label>
+                  Huisnummer en toevoeging
+                  <input type="text" name="huisnummer" />
+                </label>
 
-                            </select>
-                        </label>
+                <label>
+                  Postcode
+                  <input type="text" name="postcode" />
+                </label>
 
-                        <label>
-                            Burgerservicenummer persoon
-                            <input type="text" id="bsn" name="bsn" maxlength="9" pattern="\d{9}" required>
-                        </label>
+                <label>
+                  Plaats
+                  <input type="text" name="plaats" />
+                </label>
+              </div>
+            </fieldset>
+          </div>
 
-                        <label>
-                            Voornaam
-                            <input type="text" name="firstname" required>
+          <div class="vraag2c">
+            <fieldset>
+              <legend>
+                2c Wat is de relatie van deze vekrijger met de overledene?
+              </legend>
+              <label>
+                Selecteer uw relatie
+                <select id="relatieverkrijgers" required>
+                  <option value="echtgenoot">
+                    Echtgenoot of geregistreerd partner
+                  </option>
+                  <option value="samenwonerzonder">
+                    Samenwoner zonder notariële akte
+                  </option>
+                  <option value="samenwonermet">
+                    Samenwoner met notariële akte
+                  </option>
+                  <option value="ouder">Ouder</option>
+                  <option value="expartner">Ex-partner</option>
+                  <option value="kind">Kind of stiefkind</option>
+                  <option value="pleegkind">Pleegkind</option>
+                  <option value="kleinkind">Kleinkind</option>
+                  <option value="achterkleinkind">Achterkleinkind</option>
+                  <option value="anders">Anders</option>
+                </select>
+              </label>
+            </fieldset>
+          </div>
 
-                        </label>
+          <h2>3 Lijfrenten en pensioenen</h2>
 
+          <div class="vraag3a">
+            <fieldset>
+              <legend>
+                3a Krijgt iemand door het overlijden een lijfrente of
+                pensioenuitkering of had iemand al een lijfrente- of
+                pensioenuitkering en gaat die door het overlijden omhoog?
+              </legend>
+              <div class="radiobuttons" required>
+                <label>
+                  <input type="radio" name="3a" value="nee" />
+                  Nee
+                </label>
 
-                        <label>
-                            Tussen-voegsel(s)
-                            <input type="text" name="middlename">
+                <label>
+                  <input type="radio" name="3a" value="ja" />
+                  Ja
+                </label>
+              </div>
 
-                        </label>
-                        <label>
-                            Achternaam
-                            <input type="text" name="surname" required>
+              <legend>Wanneer stopt de uitkering?</legend>
+              <label>
+                <input
+                  type="radio"
+                  value="vastdatum"
+                  name="uitkeringstop"
+                  required
+                />
+                Op een vastgestelde datum
+              </label>
 
-                        </label>
+              <label>
+                <input
+                  type="radio"
+                  value="overlijddatum"
+                  name="uitkeringstop"
+                  required
+                />
+                Bij overlijden van de partner van de overledene
+              </label>
 
-                        <label>
-                            Geboortedatum
-                            <input type="date" name="geboortedatum" min="1900-01-01" max="2025-12-31" required>
-                        </label>
-                    </fieldset>
-                </div>
-                <div class="vraag2b">
-                    <fieldset>
-                        <legend>4b Adresgegevens</legend>
-                        <p>Adres in Nederland</p>
+              <!-- vastgestelde datum showen -->
 
-                        <label>
-                            Straatnaam
-                            <input type="text" name="straatnaam" required>
-                        </label>
+              <label>
+                Jaarlijks brutobedrag van de uitkering
 
-                        <label>
-                            Huisnummer en toevoeging
-                            <input type="text" name="huisnummer" required>
-                        </label>
+                <input type="number" value="brutouitkering" min="0" required />
+              </label>
 
-                        <label>
-                            Postcode
-                            <input type="text" name="postcode" required>
-                        </label>
+              <label>
+                Als de lijfrente-uitkering is afgekocht, voor welk bedrag?
 
-                        <label>
-                            Plaats
-                            <input type="text" name="plaats" required>
-                        </label>
+                <input
+                  type="number"
+                  value="uitkeringafgekocht"
+                  min="0"
+                  required
+                />
+              </label>
 
-                        <legend>
-                            Heeft u een Adres in het buitenland?
-                        </legend>
-                        <div class="radiobuttons">
-                            <label>
-                                <input type="radio" name="buitenland" value="ja" required>
-                                Nee
-                            </label>
+              <label>
+                Als de lijfrente-uitkering omhoog gaat, met welk bedrag?
 
-                            <label>
-                                <input type="radio" name="buitenland" value="nee" required>
-                                Ja
-                            </label>
-                        </div>
-
-                        <!-- conditioneel showen -->
-                        <div id="buitenlandadres">
-                            <label>
-                                Straatnaam
-                                <input type="text" name="straatnaam">
-                            </label>
-
-                            <label>
-                                Huisnummer en toevoeging
-                                <input type="text" name="huisnummer">
-                            </label>
-
-                            <label>
-                                Postcode
-                                <input type="text" name="postcode">
-                            </label>
-
-                            <label>
-                                Plaats
-                                <input type="text" name="plaats">
-                            </label>
-                        </div>
-                    </fieldset>
-                </div>
-
-                <div class="vraag2c">
-                    <fieldset>
-                        <legend>
-                            4c Wat is de relatie van deze vekrijger met de overledene?
-
-                        </legend>
-                        <label>
-                            Selecteer uw relatie
-                            <select id="aantalverkrijgers" required>
-                                <option value="echtgenoot">Echtgenoot of geregistreerd partner</option>
-                                <option value="samenwonerzonder">Samenwoner zonder notariële akte</option>
-                                <option value="samenwonermet">Samenwoner met notariële akte</option>
-                                <option value="ouder">Ouder</option>
-                                <option value="expartner">Ex-partner</option>
-                                <option value="kind">Kind of stiefkind</option>
-                                <option value="pleegkind">Pleegkind</option>
-                                <option value="kleinkind">Kleinkind</option>
-                                <option value="achterkleinkind">Achterkleinkind</option>
-                                <option value="anders">Anders</option>
-
-                            </select>
-                        </label>
-                    </fieldset>
-                </div>
-
-                <h2>10 Lijfrenten en pensioenen</h2>
-
-                <div class="vraag3a">
-                    <fieldset>
-                        <legend>10a Krijgt iemand door het overlijden een lijfrente of pensioenuitkering of had iemand
-                            al een lijfrente- of pensioenuitkering en gaat die door het overlijden omhoog?</legend>
-                        <div class="radiobuttons" required>
-                            <label>
-                                <input type="radio" name="3a" value="nee">
-                                Nee
-                            </label>
-
-                            <label>
-                                <input type="radio" name="3a" value="ja">
-                                Ja
-                            </label>
-                        </div>
-
-                        <legend>Wanneer stopt de uitkering?</legend>
-                        <label>
-                            <input type="radio" value="datum" required>
-                            Op een vastgestelde datum
-                        </label>
-
-                        <label>
-                            <input type="radio" value="datum" required>
-                            Bij overlijden van de partner van de overledene
-                        </label>
-
-                        <!-- vastgestelde datum showen -->
-
-                        <label>
-                            Jaarlijks brutobedrag van de uitkering
-
-                            <input type="number" value="brutouitkering" min="0" required>
-                        </label>
-
-                        <label>
-                            Als de lijfrente-uitkering is afgekocht, voor welk bedrag?
-
-                            <input type="number" value="uitkeringafgekocht" min="0" required>
-                        </label>
-
-                        <label>
-                            Als de lijfrente-uitkering omhoog gaat, met welk bedrag?
-
-                            <input type="number" value="uitkeringafgekocht" min="0" required>
-                        </label>
-                    </fieldset>
-                </div>
-                <input type="submit" value="Versturen">
-            </form>
-        </section>
+                <input
+                  type="number"
+                  value="uitkeringafgekocht"
+                  min="0"
+                  required
+                />
+              </label>
+            </fieldset>
+          </div>
+          <input type="submit" value="Versturen" />
+        </form>
+      </section>
     </main>
 
-
     <script src="/script.js"></script>
-</body>
-
+  </body>
 </html>

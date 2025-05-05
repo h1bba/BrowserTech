@@ -34,188 +34,211 @@
 } */
 
 :root {
-    --bg-yellow: #ffc917;
-    --ns-bluedark: #003082;
-    --ns-bluelight: #0063d3;
+  --bg-yellow: #ffc917;
+  --ns-bluedark: #003082;
+  --ns-bluelight: #0063d3;
 
-    --offwhite: #e9e9e9;
-    --inputgrey: #e0e0e0;
+  --offwhite: #e9e9e9;
+  --inputgrey: #e0e0e0;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: NS Sans, Segoe UI, Myriad, Verdana, sans-serif;
+  font-family: NS Sans, Segoe UI, Myriad, Verdana, sans-serif;
 
-    padding: 0;
-    margin: 0;
-    background-color: var(--offwhite);
+  padding: 0;
+  margin: 0;
+  background-color: var(--offwhite);
 }
 
-main>h1 {
-    color: var(--ns-bluedark);
-    text-align: center;
+main > h1 {
+  color: var(--ns-bluedark);
+  text-align: center;
 }
 
-main>section {
-    margin: auto;
-    /* background-color: white; */
-    width: 80vw;
+main > section {
+  margin: auto;
+  /* background-color: white; */
+  width: 80vw;
 
-    padding: 1em;
+  padding: 1em;
 
-
-    @media (min-width: 900px) {
-        fieldset {
-            display: grid;
-            grid-template-columns: 0.5fr 4fr 3fr;
-            grid-gap: 1em;
-            border: none;
-        }
-
-        legend {
-            grid-column: 1 / 2;
-        }
-
-        label {
-            /* grid-column: 3; */
-            display: flex;
-            flex-direction: column;
-        }
-
-        fieldset:nth-of-type(2) label {
-            display: flex;
-            flex-direction: row;
-        }
-
+  @media (min-width: 900px) {
+    fieldset {
+      display: grid;
+      grid-template-columns: 0.5fr 4fr 3fr;
+      grid-gap: 1em;
+      border: none;
     }
+
+    legend {
+      grid-column: 1 / 2;
+    }
+
+    label {
+      /* grid-column: 3; */
+      display: flex;
+      flex-direction: column;
+    }
+
+    fieldset:nth-of-type(2) label {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
 
 fieldset {
-    border: none;
-    height: min-content;
+  border: none;
+  height: min-content;
 
-    legend {
-        margin-top: .5em;
-        margin-bottom: .5em;
-        font-weight: 600;
-        color: var(--ns-bluedark);
-        font-size: 1.25em;
-    }
-
+  legend {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: var(--ns-bluedark);
+    font-size: 1.25em;
+  }
 }
 
 /* //////////////////// */
 /* container styling 🖼 */
 /* //////////////////// */
-.vraag1a, .vraag1b, .vraag1c, .vraag2a, .vraag2b, .vraag2c, .vraag3a {
-    box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.3);
-    background-color: white;
-    margin: 2em 0 2em 0;
-    padding: 1em;
+.vraag1a,
+.vraag1b,
+.vraag1c,
+.vraag2a,
+.vraag2b,
+.vraag2c,
+.vraag3a {
+  box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.3);
+  background-color: white;
+  margin: 2em 0 2em 0;
+  padding: 1em;
 }
 
 input[type="text"] {
-    max-width: 12em;
-    border: rgba(0, 0, 0, 0.2);
-    background-color: var(--inputgrey);
-    padding: 0.5em 0 .5em 0;
-
+  max-width: 12em;
+  border: rgba(0, 0, 0, 0.2);
+  background-color: var(--inputgrey);
+  padding: 0.5em 0 0.5em 0;
 }
 
 .vraag1a fieldset {
-
-    &:nth-of-type(1) label {
-        display: inline-flex;
-        flex-direction: column;
-        /* gap: 1em; */
-
-    }
+  &:nth-of-type(1) label {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0.2em;
+    /* gap: 1em; */
+  }
 }
 
 /* //////////////////// */
 /* Labels naast elkaar zetten */
 /* //////////////////// */
-.vraag2a label, .vraag2b label, .vraag3a label {
-    display: flex;
-    gap: 0.7em;
-    padding: 0.3em 0 0.3em 0;
+.vraag2a label,
+.vraag2b label,
+.vraag3a label {
+  display: flex;
+  gap: 0.7em;
+  padding: 0.3em 0 0.3em 0;
 }
 
-
 .radiobuttons label {
-    display: inline-flex;
-    flex-direction: row;
-    /* gap: 0.3em; */
+  display: inline-flex;
+  flex-direction: row;
+  /* gap: 0.3em; */
 }
 
 /* //////////////////// */
 /* verzend knop */
 /* //////////////////// */
 input[type="submit"] {
-    padding: 1em 2em 1em 2em;
-    background-color: var(--ns-bluelight);
-    color: var(--offwhite);
-    box-shadow: none;
-    border: none;
+  padding: 1em 2em 1em 2em;
+  background-color: var(--ns-bluelight);
+  color: var(--offwhite);
+  box-shadow: none;
+  border: none;
 }
 
-input[type="date"], input[type="number"] {
-    padding: 1em 2em 1em 2em;
+input[type="date"],
+input[type="number"] {
+  padding: 1em 2em 1em 2em;
 
-    border: none;
-    background-color: var(--inputgrey);
+  border: none;
+  background-color: var(--inputgrey);
 }
 
 select#aantalverkrijgers {
-    border: none;
-    padding: 1em 2em 1em 2em;
-
+  border: none;
+  padding: 1em 2em 1em 2em;
 }
 
-
 #extravragen {
-    display: none;
-    margin-top: 2em;
-    padding: 1em;
-    background-color: var(--inputgrey);
-    opacity: 0;
+  display: block;
+  opacity: 1;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.js #extravragen {
+  display: none;
+  opacity: 1;
 }
 
 .show {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
-
 .disclaimer {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 0;
 
-    text-align: center;
-    display: block;
-    background-color: var(--ns-bluedark);
-    color: white;
+  text-align: center;
+  display: block;
+  background-color: var(--ns-bluedark);
+  color: white;
 }
 
 input:user-invalid {
-    color: red;
-    outline: 2px solid red;
+  color: red;
+  outline: 2px solid red;
 }
 
 input[type="radio"]:user-invalid {
-    outline: 2px solid red;
+  outline: 2px solid red;
+}
+/* 
+input[type="radio"]:user-valid {
+    accent-color: green;
+} */
+
+/* Foutmelding automatisch tonen bij ongeldige input */
+input:user-invalid,
+select:user-invalid {
+  border: 2px solid red;
+  background-color: #ffe6e6;
 }
 
-input[type="radio"]:user-valid {
-    /* outline: 2px solid green; */
-    accent-color: green;
+input:user-invalid + .error-message,
+select:user-invalid + .error-message {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.2em;
+}
+
+/* Verberg foutmeldingen standaard */
+.error-message {
+  display: none;
 }
