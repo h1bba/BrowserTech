@@ -57,7 +57,7 @@ body {
 
   padding: 0;
   margin: 0;
-  background-color: var(--offwhite);
+  background-color: var(--bg-yellow);
 }
 
 main > h1 {
@@ -100,7 +100,7 @@ main > section {
 
 label {
   margin: 0.2em 0 0.2em 0;
-  align-items: center;
+  /* align-items: center; */
 }
 
 fieldset {
@@ -136,36 +136,22 @@ input {
   box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.3);
   background-color: white;
   margin: 2em 0 2em 0;
-  padding: 1em;
+  padding: 2em;
 }
 
 input[type="text"] {
   max-width: 12em;
   border: 1px solid rgba(0, 0, 0, 0.33);
   background-color: var(--inputgrey);
-  padding: 0.5em 0.2em 0.5em 0.2em;
+  padding: 0.5em 0.4em 0.5em 0.4em;
 }
 
-/* .vraag1a fieldset {
-  &:nth-of-type(1) label {
-    display: inline-flex;
-    flex-direction: column;
-    padding: 0.2em;
-  }
-} */
-
-/* //////////////////// */
-/* Labels naast elkaar zetten */
-/* //////////////////// */
-/* .vraag2a label,
-.vraag2b label,
-.vraag3a label {
-  display: flex;
-  gap: 0.7em;
-  padding: 0.3em 0 0.3em 0;
-} */
+::placeholder {
+  font-style: italic;
+}
 
 .radiobuttons {
+  align-items: center;
   display: flex;
   gap: 1em;
 }
@@ -176,9 +162,27 @@ input[type="text"] {
   gap: 0.3em;
 }
 
-fieldset label {
+.radiobuttons-center {
+  gap: 0em;
+  flex-direction: column;
+}
+
+.radiobuttons-center label {
   display: flex;
-  gap: 0.5em;
+  flex-direction: row;
+  gap: 0.3em;
+}
+
+fieldset label {
+  margin: 1em 0em 1em 0em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+input:hover {
+  border: 1px solid var(--ns-bluedark);
+  transition: 0.2s ease;
 }
 
 /* //////////////////// */
@@ -193,7 +197,9 @@ input[type="submit"] {
 }
 
 input[type="date"],
-input[type="number"] {
+input[type="number"],
+select {
+  max-width: 12em;
   padding: 0.5em 0.5em 0.5em 0.5em;
 
   border: 1px solid rgba(0, 0, 0, 0.33);
@@ -223,7 +229,8 @@ input[type="file"] {
 
 #extravragen,
 #extravragen1c,
-.buitenlandadres {
+.buitenlandadres,
+#vraag3b {
   display: block;
   opacity: 1;
   /* margin-top: 2em; */
@@ -263,12 +270,12 @@ input[type="radio"]:user-invalid {
 }
 
 .success-message {
-  color: green;
+  color: rgb(64, 255, 64);
   font-size: 0.8em;
 }
 
 input:user-valid {
-  border: 2px solid green;
+  border: 2px solid rgb(64, 255, 64);
 }
 
 .js-enabled .js-hidden {

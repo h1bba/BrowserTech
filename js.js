@@ -107,6 +107,42 @@ document.querySelectorAll('input[name^="buitenland_"]').forEach((radio) => {
   });
 });
 
+// Vraag 3a: toon 3b indien 'ja' geselecteerd is
+const vraag3aRadios = document.querySelectorAll('input[name="3a"]');
+const vraag3b = document.getElementById("vraag3b");
+
+function toggleVraag3b() {
+  const isJa = [...vraag3aRadios].some((r) => r.checked && r.value === "ja");
+  if (vraag3b) {
+    vraag3b.style.display = isJa ? "block" : "none";
+  }
+}
+
+vraag3aRadios.forEach((radio) => {
+  radio.addEventListener("change", toggleVraag3b);
+});
+toggleVraag3b();
+
+// Vraag 3b: toon datumveld alleen als 'vastdatum' is gekozen
+const uitkeringstopRadios = document.querySelectorAll(
+  'input[name="uitkeringstop"]'
+);
+const vastdatumContainer = document.getElementById("vastdatum-container");
+
+function toggleVastdatum() {
+  const isVastdatum = [...uitkeringstopRadios].some(
+    (r) => r.checked && r.value === "vastdatum"
+  );
+  if (vastdatumContainer) {
+    vastdatumContainer.style.display = isVastdatum ? "block" : "none";
+  }
+}
+
+uitkeringstopRadios.forEach((radio) => {
+  radio.addEventListener("change", toggleVastdatum);
+});
+toggleVastdatum();
+
 // Initiale check uitvoeren bij laden
 document.querySelectorAll('input[name^="buitenland_"]').forEach((radio) => {
   const name = radio.name;

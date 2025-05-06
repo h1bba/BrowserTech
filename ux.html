@@ -25,17 +25,27 @@
               <legend>1a Vul hier de gegevens in van de overledene.</legend>
               <label>
                 Voornaam
-                <input type="text" name="firstname" required />
+                <input
+                  type="text"
+                  name="firstname"
+                  placeholder="Johan"
+                  required
+                />
               </label>
 
               <label>
-                Tussen-voegsel(s)
-                <input type="text" name="middlename" />
+                <i>Tussen-voegsel(s)</i>
+                <input type="text" name="middlename" placeholder="van de" />
               </label>
 
               <label>
                 Achternaam
-                <input type="text" name="surname" required />
+                <input
+                  type="text"
+                  name="surname"
+                  placeholder="Bakker"
+                  required
+                />
               </label>
             </fieldset>
           </div>
@@ -203,7 +213,7 @@
                   <label>
                     Burgerservicenummer persoon
                     <input
-                      type="text"
+                      type="number"
                       id="bsn_1"
                       name="bsn_1"
                       maxlength="9"
@@ -882,6 +892,105 @@
                 </fieldset>
               </div>
             </div>
+          </div>
+
+          <h2>3 Lijfrenten en pensioenen</h2>
+
+          <div class="vraag3a">
+            <fieldset>
+              <legend>
+                3a Krijgt iemand door het overlijden een lijfrente of
+                pensioenuitkering of had iemand al een lijfrente- of
+                pensioenuitkering en gaat die door het overlijden omhoog?
+              </legend>
+              <div class="radiobuttons">
+                <label>
+                  <input type="radio" name="3a" value="nee" />
+                  Nee
+                </label>
+
+                <label>
+                  <input type="radio" name="3a" value="ja" />
+                  Ja
+                </label>
+              </div>
+
+              <!-- conditioneel -->
+              <div id="vraag3b" class="js-hidden">
+                <legend>3b Wanneer stopt de uitkering?</legend>
+                <div class="radiobuttons-center">
+                  <label>
+                    <input
+                      type="radio"
+                      value="vastdatum"
+                      name="uitkeringstop"
+                      required
+                    />
+                    Op een vastgestelde datum
+                  </label>
+
+                  <!-- vastgestelde datum showen -->
+                  <div id="vastdatum-container" class="js-hidden">
+                    <input
+                      type="date"
+                      name="uitkeringstopdatum"
+                      value=""
+                      min="2025-01-01"
+                      max="2050-12-31"
+                    />
+                  </div>
+                  <label>
+                    <input
+                      type="radio"
+                      value="overlijddatum"
+                      name="uitkeringstop"
+                      required
+                    />
+                    Bij overlijden van de partner van de overledene
+                  </label>
+                </div>
+
+                <label>
+                  Jaarlijks brutobedrag van de uitkering
+                  <input
+                    type="number"
+                    name="brutouitkering"
+                    min="0"
+                    max="100000000"
+                    step="0.01"
+                    placeholder="€ 9600.00"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Als de lijfrente-uitkering is afgekocht, voor welk bedrag?
+
+                  <input
+                    type="number"
+                    name="uitkeringafgekocht"
+                    min="0"
+                    max="100000000"
+                    step="0.01"
+                    placeholder="€ 00.00"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Als de lijfrente-uitkering omhoog gaat, met welk bedrag?
+                  <input
+                    type="number"
+                    name="uitkeringafgekocht"
+                    min="0"
+                    max="100000000"
+                    step="0.01"
+                    placeholder="€ 00.00"
+                    required
+                  />
+                </label>
+              </div>
+            </fieldset>
           </div>
 
           <input type="submit" value="Versturen" />
