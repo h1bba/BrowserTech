@@ -59,12 +59,12 @@ body {
   background-color: var(--offwhite);
 }
 
-main>h1 {
+main > h1 {
   color: var(--ns-bluedark);
   text-align: center;
 }
 
-main>section {
+main > section {
   margin: auto;
   /* background-color: white; */
   width: 80vw;
@@ -107,6 +107,10 @@ fieldset {
     color: var(--ns-bluedark);
     font-size: 1.25em;
   }
+}
+
+input {
+  margin: 0.2em 0 0.2em 0;
 }
 
 /* //////////////////// */
@@ -179,13 +183,12 @@ input[type="number"] {
 
 select#aantalverkrijgers {
   border: none;
-  padding: 1em 2em 1em 2em;
+  padding: 0em 1em 0em 1em;
 }
 
 input[type="file"] {
   padding: 1em 1em 1em 0em;
 }
-
 
 #extravragen {
   display: block;
@@ -221,29 +224,18 @@ input[type="radio"]:user-invalid {
   outline: 2px solid red;
 }
 
-/* 
-input[type="radio"]:user-valid {
-    accent-color: green;
-} */
-
-/* Foutmelding automatisch tonen bij ongeldige input */
-input:user-invalid,
-select:user-invalid {
-  border: 2px solid red;
-  background-color: #ffe6e6;
-}
-
-input:user-invalid+.error-message,
-select:user-invalid+.error-message {
-  display: block;
-  color: red;
-  font-size: 0.9em;
-  margin-top: 0.2em;
-}
-
-/* Verberg foutmeldingen standaard */
 .error-message {
-  display: none;
+  color: red;
+  font-size: 0.8em;
+}
+
+.success-message {
+  color: green;
+  font-size: 0.8em;
+}
+
+input:user-valid {
+  border: 2px solid green;
 }
 
 .js-enabled .js-hidden {
