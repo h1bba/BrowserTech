@@ -48,15 +48,17 @@
                 geregistreerd partner op het moment van overlijden?
               </legend>
 
-              <label>
-                <input type="radio" name="getrouwd" value="nee" required />
-                Nee
-              </label>
+              <div class="radiobuttons">
+                <label>
+                  <input type="radio" name="getrouwd" value="nee" required />
+                  Nee
+                </label>
 
-              <label>
-                <input type="radio" name="getrouwd" value="ja" required />
-                Ja
-              </label>
+                <label>
+                  <input type="radio" name="getrouwd" value="ja" required />
+                  Ja
+                </label>
+              </div>
 
               <!-- conditioneel showen -->
               <div id="extravragen" class="js-hidden">
@@ -65,15 +67,17 @@
                   partner huwelijkse of partner schaps- voorwaarden laten
                   vastleggen in een notariële akte?
                 </legend>
-                <label>
-                  <input type="radio" name="geregistreerd" value="nee" />
-                  Nee
-                </label>
+                <div class="radiobuttons">
+                  <label>
+                    <input type="radio" name="geregistreerd" value="nee" />
+                    Nee
+                  </label>
 
-                <label>
-                  <input type="radio" name="geregistreerd" value="ja" />
-                  Ja (Stuur een kopie van de akte mee met de aangifte.)
-                </label>
+                  <label>
+                    <input type="radio" name="geregistreerd" value="ja" />
+                    Ja (Stuur een kopie van de akte mee met de aangifte.)
+                  </label>
+                </div>
 
                 <div class="file-upload js-hidden" id="akte-upload">
                   <input type="file" name="akte-kopie" />
@@ -83,15 +87,18 @@
                   Hadden de overledene en diens partner een finaal
                   verrekenbeding?
                 </legend>
-                <label>
-                  <input type="radio" name="verrekenbeding" value="nee" />
-                  Nee
-                </label>
 
-                <label>
-                  <input type="radio" name="verrekenbeding" value="ja" />
-                  Ja
-                </label>
+                <div class="radiobuttons">
+                  <label>
+                    <input type="radio" name="verrekenbeding" value="nee" />
+                    Nee
+                  </label>
+
+                  <label>
+                    <input type="radio" name="verrekenbeding" value="ja" />
+                    Ja
+                  </label>
+                </div>
 
                 <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
                 <input
@@ -109,15 +116,18 @@
           <div class="vraag1c">
             <fieldset>
               <legend>1C Had de overledene kinderen?</legend>
-              <label>
-                <input type="radio" name="kinderen" value="nee" required />
-                Nee
-              </label>
 
-              <label>
-                <input type="radio" name="kinderen" value="ja" required />
-                Ja
-              </label>
+              <div class="radiobuttons">
+                <label>
+                  <input type="radio" name="kinderen" value="nee" required />
+                  Nee
+                </label>
+
+                <label>
+                  <input type="radio" name="kinderen" value="ja" required />
+                  Ja
+                </label>
+              </div>
 
               <!-- conditioneel showen -->
               <div id="extravragen1c" class="js-hidden">
@@ -125,28 +135,33 @@
                   Is 1 van deze kinderen eerder overleden dan de overledene voor
                   wie u nu aangifte doet?
                 </legend>
-                <label>
-                  <input type="radio" name="kindoverleden" value="nee" />
-                  Nee
-                </label>
-                <label>
-                  <input type="radio" name="kindoverleden" value="ja" />
-                  Ja
-                </label>
+
+                <div class="radiobuttons">
+                  <label>
+                    <input type="radio" name="kindoverleden" value="nee" />
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="kindoverleden" value="ja" />
+                    Ja
+                  </label>
+                </div>
 
                 <!-- conditioneel showen -->
                 <div id="kleinkinderenvraag" class="js-hidden">
                   <legend>Had dit overleden kind zelf kinderen?</legend>
 
-                  <label>
-                    <input type="radio" name="kleinkinderen" value="nee" />
-                    Nee
-                  </label>
+                  <div class="radiobuttons">
+                    <label>
+                      <input type="radio" name="kleinkinderen" value="nee" />
+                      Nee
+                    </label>
 
-                  <label>
-                    <input type="radio" name="kleinkinderen" value="ja" />
-                    Ja
-                  </label>
+                    <label>
+                      <input type="radio" name="kleinkinderen" value="ja" />
+                      Ja
+                    </label>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -180,6 +195,8 @@
             <div id="verkrijgers-container">
               <!-- Verkrijger 1 -->
               <div class="verkrijger" data-index="1">
+                <hr />
+
                 <fieldset>
                   <legend>Verkrijger 1</legend>
 
@@ -244,7 +261,7 @@
                     </select>
                   </label>
 
-                  <p>Adres in Nederland</p>
+                  <legend>Adres in Nederland</legend>
 
                   <label>
                     Straatnaam
@@ -316,9 +333,10 @@
 
               <!-- Verkrijger 2 -->
               <div class="verkrijger" data-index="2">
+                <hr />
+
                 <fieldset>
                   <legend>Verkrijger 2</legend>
-
                   <label>
                     Burgerservicenummer persoon
                     <input
@@ -380,7 +398,7 @@
                     </select>
                   </label>
 
-                  <p>Adres in Nederland</p>
+                  <legend>Adres in Nederland</legend>
 
                   <label>
                     Straatnaam
@@ -452,6 +470,8 @@
 
               <!-- Verkrijger 3 -->
               <div class="verkrijger" data-index="3">
+                <hr />
+
                 <fieldset>
                   <legend>Verkrijger 3</legend>
 
@@ -516,7 +536,7 @@
                     </select>
                   </label>
 
-                  <p>Adres in Nederland</p>
+                  <legend>Adres in Nederland</legend>
 
                   <label>
                     Straatnaam
@@ -588,6 +608,8 @@
 
               <!-- Verkrijger 4 -->
               <div class="verkrijger" data-index="4">
+                <hr />
+
                 <fieldset>
                   <legend>Verkrijger 4</legend>
 
@@ -652,7 +674,7 @@
                     </select>
                   </label>
 
-                  <p>Adres in Nederland</p>
+                  <legend>Adres in Nederland</legend>
 
                   <label>
                     Straatnaam
@@ -724,6 +746,8 @@
 
               <!-- Verkrijger 5 -->
               <div class="verkrijger" data-index="5">
+                <hr />
+
                 <fieldset>
                   <legend>Verkrijger 5</legend>
 
@@ -788,7 +812,7 @@
                     </select>
                   </label>
 
-                  <p>Adres in Nederland</p>
+                  <legend>Adres in Nederland</legend>
 
                   <label>
                     Straatnaam
