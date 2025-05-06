@@ -59,12 +59,12 @@ body {
   background-color: var(--offwhite);
 }
 
-main > h1 {
+main>h1 {
   color: var(--ns-bluedark);
   text-align: center;
 }
 
-main > section {
+main>section {
   margin: auto;
   /* background-color: white; */
   width: 80vw;
@@ -174,7 +174,7 @@ input[type="number"] {
   padding: 1em 2em 1em 2em;
 
   border: none;
-  background-color: var(--inputgrey);
+  /* background-color: var(--inputgrey); */
 }
 
 select#aantalverkrijgers {
@@ -182,16 +182,18 @@ select#aantalverkrijgers {
   padding: 1em 2em 1em 2em;
 }
 
+input[type="file"] {
+  padding: 1em 1em 1em 0em;
+}
+
+
 #extravragen {
   display: block;
   opacity: 1;
-  margin-top: 2em;
+  /* margin-top: 2em; */
+  margin-top: 1em;
   padding: 1em;
-}
-
-.js #extravragen {
-  display: none;
-  opacity: 1;
+  background-color: var(--inputgrey);
 }
 
 .show {
@@ -218,6 +220,7 @@ input:user-invalid {
 input[type="radio"]:user-invalid {
   outline: 2px solid red;
 }
+
 /* 
 input[type="radio"]:user-valid {
     accent-color: green;
@@ -230,8 +233,8 @@ select:user-invalid {
   background-color: #ffe6e6;
 }
 
-input:user-invalid + .error-message,
-select:user-invalid + .error-message {
+input:user-invalid+.error-message,
+select:user-invalid+.error-message {
   display: block;
   color: red;
   font-size: 0.9em;
@@ -240,5 +243,9 @@ select:user-invalid + .error-message {
 
 /* Verberg foutmeldingen standaard */
 .error-message {
+  display: none;
+}
+
+.js-enabled .js-hidden {
   display: none;
 }

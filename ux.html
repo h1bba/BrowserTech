@@ -2,17 +2,155 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Tech</title>
+
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
+    <p class="disclaimer">
+        Dit is een schoolproject voor de minor Web Development & Design aan het
+        HvA! Dit is niet echt!
+    </p>
+    <main>
+        <h1>Formulier voor de belasting (schoolproject)</h1>
+        <section>
+            <h2>1 Gegevens van overledene</h2>
 
-    <h1>UX van HTML</h1>
-    <a href="#test">Link</a>
+            <form method="post" action="">
+                <div class="vraag1a">
+                    <fieldset>
+                        <legend>1a Vul hier de gegevens in van de overledene.</legend>
+                        <label>
+                            Voornaam
+                            <input type="text" name="firstname" required />
+                        </label>
 
+                        <label>
+                            Tussen-voegsel(s)
+                            <input type="text" name="middlename" />
+                        </label>
 
+                        <label>
+                            Achternaam
+                            <input type="text" name="surname" required />
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div class="vraag1b">
+                    <fieldset>
+                        <legend>
+                            1b Was de overledene getrouwd of had de overledene een
+                            geregistreerd partner op het moment van overlijden?
+                        </legend>
+
+                        <label>
+                            <input type="radio" name="getrouwd" value="nee" required />
+                            Nee
+                        </label>
+
+                        <label>
+                            <input type="radio" name="getrouwd" value="ja" required />
+                            Ja
+                        </label>
+
+                        <!-- conditioneel showen -->
+                        <div id="extravragen" class="js-hidden">
+                            <legend>
+                                Hadden de overledene en diens echtgenoot of geregistreerd
+                                partner huwelijkse of partner schaps- voorwaarden laten
+                                vastleggen in een notariële akte?
+                            </legend>
+                            <label>
+                                <input type="radio" name="geregistreerd" value="nee" />
+                                Nee
+                            </label>
+
+                            <label>
+                                <input type="radio" name="geregistreerd" value="ja" />
+                                Ja (Stuur een kopie van de akte mee met de aangifte.)
+                            </label>
+
+                            <div class="file-upload js-hidden" id="akte-upload">
+                                <input type="file" name="akte-kopie" />
+                            </div>
+
+                            <legend>
+                                Hadden de overledene en diens partner een finaal
+                                verrekenbeding?
+                            </legend>
+                            <label>
+                                <input type="radio" name="verrekenbeding" value="nee" />
+                                Nee
+                            </label>
+
+                            <label>
+                                <input type="radio" name="verrekenbeding" value="ja" />
+                                Ja
+                            </label>
+
+                            <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+                            <input type="date" name="huwelijkdatum" value="" min="1900-01-01" max="2025-12-31" />
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="vraag1c">
+                    <fieldset>
+                        <legend>1C Had de overledene kinderen?</legend>
+                        <label>
+                            <input type="radio" name="kinderen" value="nee" required />
+                            Nee
+                        </label>
+
+                        <label>
+                            <input type="radio" name="kinderen" value="ja" required />
+                            Ja
+                        </label>
+
+                        <!-- conditioneel showen -->
+                        <div id="extravragen1c" class="js-hidden">
+                            <legend>
+                                Is 1 van deze kinderen eerder overleden dan de overledene voor
+                                wie u nu aangifte doet?
+                            </legend>
+                            <label>
+                                <input type="radio" name="kindoverleden" value="nee" />
+                                Nee
+                            </label>
+                            <label>
+                                <input type="radio" name="kindoverleden" value="ja" />
+                                Ja
+                            </label>
+
+                            <!-- conditioneel showen -->
+                            <div id="kleinkinderenvraag" class="js-hidden">
+                                <legend>Had dit overleden kind zelf kinderen?</legend>
+
+                                <label>
+                                    <input type="radio" name="kleinkinderen" value="nee" />
+                                    Nee
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="kleinkinderen" value="ja" />
+                                    Ja
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <input type="submit" value="Versturen" />
+            </form>
+        </section>
+    </main>
+
+    <script src="/js.js"></script>
 </body>
 
 </html>
