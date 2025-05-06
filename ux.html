@@ -161,58 +161,248 @@
               </legend>
               <label>
                 Aantal verkrijgers
-                <select id="aantalverkrijgers" required>
-                  <option value="0">0</option>
+                <select
+                  id="aantalverkrijgers"
+                  name="aantalverkrijgers"
+                  required
+                >
+                  <option value="0">Maak een keuze</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                   <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
                 </select>
               </label>
-
-              <label>
-                Burgerservicenummer persoon
-                <input
-                  type="text"
-                  id="bsn"
-                  name="bsn"
-                  maxlength="9"
-                  pattern="\d{9}"
-                  placeholder="123456789 (voorbeeld)"
-                  required
-                />
-              </label>
-
-              <label>
-                Voornaam
-                <input type="text" name="firstname" required />
-              </label>
-
-              <label>
-                Tussen-voegsel(s)
-                <input type="text" name="middlename" />
-              </label>
-              <label>
-                Achternaam
-                <input type="text" name="surname" required />
-              </label>
-
-              <label>
-                Geboortedatum
-                <input
-                  type="date"
-                  name="geboortedatum"
-                  min="1900-01-01"
-                  max="2025-12-31"
-                  required
-                />
-              </label>
             </fieldset>
-          </div>
+
+            <!-- 5 verkrijgers als fallback -->
+            <div id="verkrijgers-container">
+              <!-- Verkrijger 1 -->
+              <div class="verkrijger" data-index="1">
+                <fieldset>
+                  <legend>Verkrijger 1</legend>
+
+                  <label>
+                    Burgerservicenummer persoon
+                    <input
+                      type="text"
+                      id="bsn_1"
+                      name="bsn_1"
+                      maxlength="9"
+                      pattern="\d{9}"
+                      placeholder="123456789 (voorbeeld)"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Voornaam
+                    <input type="text" name="verfirstname_1" required />
+                  </label>
+
+                  <label>
+                    Tussen-voegsel(s)
+                    <input type="text" name="vermiddlename_1" />
+                  </label>
+
+                  <label>
+                    Achternaam
+                    <input type="text" name="versurname_1" required />
+                  </label>
+
+                  <label>
+                    Geboortedatum
+                    <input
+                      type="date"
+                      name="geboortedatum_1"
+                      min="1900-01-01"
+                      required
+                    />
+                  </label>
+                </fieldset>
+              </div>
+
+              <!-- Verkrijger 2 -->
+              <div class="verkrijger" data-index="2">
+                <fieldset>
+                  <legend>Verkrijger 2</legend>
+
+                  <label>
+                    Burgerservicenummer persoon
+                    <input
+                      type="text"
+                      id="bsn_2"
+                      name="bsn_2"
+                      maxlength="9"
+                      pattern="\d{9}"
+                      placeholder="123456789 (voorbeeld)"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Voornaam
+                    <input type="text" name="verfirstname_2" required />
+                  </label>
+
+                  <label>
+                    Tussen-voegsel(s)
+                    <input type="text" name="vermiddlename_2" />
+                  </label>
+
+                  <label>
+                    Achternaam
+                    <input type="text" name="versurname_2" required />
+                  </label>
+
+                  <label>
+                    Geboortedatum
+                    <input
+                      type="date"
+                      name="geboortedatum_2"
+                      min="1900-01-01"
+                      required
+                    />
+                  </label>
+                </fieldset>
+              </div>
+
+              <!-- Verkrijger 3 -->
+              <div class="verkrijger" data-index="3">
+                <fieldset>
+                  <legend>Verkrijger 3</legend>
+
+                  <label>
+                    Burgerservicenummer persoon
+                    <input
+                      type="text"
+                      id="bsn_3"
+                      name="bsn_3"
+                      maxlength="9"
+                      pattern="\d{9}"
+                      placeholder="123456789 (voorbeeld)"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Voornaam
+                    <input type="text" name="verfirstname_3" required />
+                  </label>
+
+                  <label>
+                    Tussen-voegsel(s)
+                    <input type="text" name="vermiddlename_3" />
+                  </label>
+
+                  <label>
+                    Achternaam
+                    <input type="text" name="versurname_3" required />
+                  </label>
+
+                  <label>
+                    Geboortedatum
+                    <input
+                      type="date"
+                      name="geboortedatum_3"
+                      min="1900-01-01"
+                      required
+                    />
+                  </label>
+                </fieldset>
+              </div>
+
+              <!-- Verkrijger 4 -->
+              <div class="verkrijger" data-index="4">
+                <fieldset>
+                  <legend>Verkrijger 4</legend>
+
+                  <label>
+                    Burgerservicenummer persoon
+                    <input
+                      type="text"
+                      id="bsn_4"
+                      name="bsn_4"
+                      maxlength="9"
+                      pattern="\d{9}"
+                      placeholder="123456789 (voorbeeld)"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Voornaam
+                    <input type="text" name="verfirstname_4" required />
+                  </label>
+
+                  <label>
+                    Tussen-voegsel(s)
+                    <input type="text" name="vermiddlename_4" />
+                  </label>
+
+                  <label>
+                    Achternaam
+                    <input type="text" name="versurname_4" required />
+                  </label>
+
+                  <label>
+                    Geboortedatum
+                    <input
+                      type="date"
+                      name="geboortedatum_4"
+                      min="1900-01-01"
+                      required
+                    />
+                  </label>
+                </fieldset>
+              </div>
+
+              <!-- Verkrijger 5 -->
+              <div class="verkrijger" data-index="5">
+                <fieldset>
+                  <legend>Verkrijger 5</legend>
+
+                  <label>
+                    Burgerservicenummer persoon
+                    <input
+                      type="text"
+                      id="bsn_5"
+                      name="bsn_5"
+                      maxlength="9"
+                      pattern="\d{9}"
+                      placeholder="123456789 (voorbeeld)"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Voornaam
+                    <input type="text" name="verfirstname_5" required />
+                  </label>
+
+                  <label>
+                    Tussen-voegsel(s)
+                    <input type="text" name="vermiddlename_5" />
+                  </label>
+
+                  <label>
+                    Achternaam
+                    <input type="text" name="versurname_5" required />
+                  </label>
+
+                  <label>
+                    Geboortedatum
+                    <input
+                      type="date"
+                      name="geboortedatum_5"
+                      min="1900-01-01"
+                      required
+                    />
+                  </label>
+                </fieldset>
+              </div>
+            </div>
 
           <input type="submit" value="Versturen" />
         </form>

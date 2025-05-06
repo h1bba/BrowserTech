@@ -74,6 +74,19 @@ if (dateInput) {
   dateInput.max = `${yyyy}-${mm}-${dd}`;
 }
 
+// Aantal verkrijgers
+const aantalSelect = document.getElementById("aantalverkrijgers");
+const verkrijgers = document.querySelectorAll(".verkrijger");
+
+aantalSelect.addEventListener("change", () => {
+  const aantal = parseInt(aantalSelect.value, 10) || 0;
+
+  verkrijgers.forEach((verkrijger) => {
+    const index = parseInt(verkrijger.dataset.index, 10);
+    verkrijger.style.display = index <= aantal ? "block" : "none";
+  });
+});
+
 // Local storage opslaan en herstellen
 document.querySelectorAll("input, select, textarea").forEach((field) => {
   if (!field.name) return;
