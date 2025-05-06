@@ -63,15 +63,19 @@ geregistreerdRadios.forEach((r) =>
 );
 toggleAkteUpload();
 
-// Maximaal toegestane datum instellen op vandaag
-const dateInput = document.querySelector('input[name="huwelijkdatum"]');
+// Date input maximaal naar vandaag
+const today = new Date().toISOString().split("T")[0];
+document
+  .querySelectorAll('input[type="date"][name^="geboortedatum_"]')
+  .forEach((dateField) => {
+    dateField.max = today;
+  });
 
-if (dateInput) {
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, "0");
-  const dd = String(today.getDate()).padStart(2, "0");
-  dateInput.max = `${yyyy}-${mm}-${dd}`;
+const huwelijkDatumInput = document.querySelector(
+  'input[name="huwelijkdatum"]'
+);
+if (huwelijkDatumInput) {
+  huwelijkDatumInput.max = today;
 }
 
 // Aantal verkrijgers
@@ -85,6 +89,36 @@ aantalSelect.addEventListener("change", () => {
     const index = parseInt(verkrijger.dataset.index, 10);
     verkrijger.style.display = index <= aantal ? "block" : "none";
   });
+});
+
+// Buitenlandadres per verkrijger tonen
+document.querySelectorAll('input[name^="buitenland_"]').forEach((radio) => {
+  radio.addEventListener("change", () => {
+    const name = radio.name; // bijvoorbeeld: buitenland_1
+    const index = name.split("_")[1];
+    const container = document.getElementById(`buitenlandadres_${index}`);
+    const isJa = document.querySelector(
+      `input[name="${name}"][value="ja"]`
+    ).checked;
+
+    if (container) {
+      container.style.display = isJa ? "block" : "none";
+    }
+  });
+});
+
+// Initiale check uitvoeren bij laden
+document.querySelectorAll('input[name^="buitenland_"]').forEach((radio) => {
+  const name = radio.name;
+  const index = name.split("_")[1];
+  const container = document.getElementById(`buitenlandadres_${index}`);
+  const isJa = document.querySelector(
+    `input[name="${name}"][value="ja"]`
+  )?.checked;
+
+  if (container) {
+    container.style.display = isJa ? "block" : "none";
+  }
 });
 
 // Local storage opslaan en herstellen
