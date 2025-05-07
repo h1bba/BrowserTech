@@ -157,6 +157,44 @@ document.querySelectorAll('input[name^="buitenland_"]').forEach((radio) => {
   }
 });
 
+// Genereer automatische validatie met feedback voor elk tekst-, getal- en datumveld
+document
+  .querySelectorAll(
+    'input[type="text"], input[type="number"], input[type="date"], input[type="email"]'
+  )
+  .forEach((field) => {
+    if (!field.name) return;
+
+    // Maak en plaats feedback-div
+    const feedback = document.createElement("div");
+    feedback.classList.add("feedback-message");
+
+    // Voeg na het inputveld toe
+    field.insertAdjacentElement("afterend", feedback);
+
+    // Validatie bij verlaten veld
+    field.addEventListener("blur", () => {
+      if (field.checkValidity()) {
+        field.classList.add("valid");
+        field.classList.remove("invalid");
+        feedback.textContent = "U heeft dit veld correct ingevuld.";
+        feedback.className = "feedback-message success-message";
+      } else {
+        field.classList.remove("valid");
+        field.classList.add("invalid");
+        feedback.textContent = "Dit veld is niet correct ingevuld.";
+        feedback.className = "feedback-message error-message";
+      }
+    });
+
+    // Reset feedback bij typen
+    field.addEventListener("input", () => {
+      field.classList.remove("invalid");
+      feedback.textContent = "";
+      feedback.className = "feedback-message";
+    });
+  });
+
 // Local storage opslaan en herstellen
 document.querySelectorAll("input, select, textarea").forEach((field) => {
   if (!field.name) return;

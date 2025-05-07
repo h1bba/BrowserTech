@@ -71,31 +71,6 @@ main > section {
   width: 80vw;
 
   padding: 1em;
-
-  @media (min-width: 900px) {
-    fieldset {
-      display: grid;
-      grid-template-columns: 0.5fr 4fr 3fr;
-      grid-gap: 1em;
-      border: none;
-    }
-
-    legend {
-      grid-column: 1 / 2;
-    }
-
-    label {
-      /* grid-column: 3; */
-      display: flex;
-      flex-direction: column;
-      /* justify-content: center; */
-    }
-
-    fieldset:nth-of-type(2) label {
-      display: flex;
-      flex-direction: row;
-    }
-  }
 }
 
 label {
@@ -270,14 +245,64 @@ input[type="radio"]:user-invalid {
 }
 
 .success-message {
-  color: rgb(64, 255, 64);
+  color: green;
   font-size: 0.8em;
 }
 
 input:user-valid {
-  border: 2px solid rgb(64, 255, 64);
+  border: 2px solid rgb(0, 179, 0);
+}
+
+/* feedback validatie */
+.feedback-message:empty {
+  display: none;
+}
+
+.feedback-message {
+  font-size: 0.9em;
+  margin-top: 0.25em;
+}
+
+.success-message {
+  color: rgb(0, 179, 0);
+}
+
+.error-message {
+  width: fit-content;
+  display: block;
+  background-color: red;
+  color: white;
+}
+
+input.valid {
+  border: 2px solid rgb(0, 179, 0);
+}
+
+input.invalid {
+  border: 2px solid red;
 }
 
 .js-enabled .js-hidden {
   display: none;
+}
+
+@media screen and (min-width: 786px) {
+  main > section {
+    box-sizing: border-box;
+    max-width: 1200px;
+  }
+
+  div.vraag1a fieldset {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  div.verkrijger > fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div.verkrijger > fieldset legend {
+    grid-column: 1 / -1;
+  }
 }
