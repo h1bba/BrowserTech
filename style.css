@@ -306,3 +306,18 @@ input.invalid {
     grid-column: 1 / -1;
   }
 }
+
+@media screen and (min-width: 300px) {
+  .vraag1a,
+  .vraag1b,
+  .vraag1c,
+  .vraag2a,
+  .vraag2b,
+  .vraag2c,
+  .vraag3a {
+    box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.3);
+    background-color: white;
+    margin: 2em 0 2em 0;
+    padding: 1em;
+  }
+}
