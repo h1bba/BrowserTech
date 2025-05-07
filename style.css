@@ -249,7 +249,8 @@ input[type="radio"]:user-invalid {
   font-size: 0.8em;
 }
 
-input:user-valid {
+input:user-valid,
+select:user-valid {
   border: 2px solid rgb(0, 179, 0);
 }
 
@@ -270,7 +271,7 @@ input:user-valid {
 .error-message {
   width: fit-content;
   display: block;
-  background-color: red;
+  background-color: rgb(216, 0, 0);
   color: white;
 }
 
@@ -279,7 +280,7 @@ input.valid {
 }
 
 input.invalid {
-  border: 2px solid red;
+  border: 2px solid rgb(216, 0, 0);
 }
 
 .js-enabled .js-hidden {

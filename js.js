@@ -196,7 +196,7 @@ document
   });
 
 // Local storage opslaan en herstellen
-document.querySelectorAll("input, select, textarea").forEach((field) => {
+document.querySelectorAll("input, select").forEach((field) => {
   if (!field.name) return;
 
   // herstel
