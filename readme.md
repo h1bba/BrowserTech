@@ -12,9 +12,7 @@ Het belastingdienst formulier is een langwerpig en inefficiënte formulier die v
 
 Er worden veel dure termen gebruikt en onnodige velden als je niet aan extra voorwaarden voldoet, daardoor wordt het formulier als inefficiënt gezien.
 
-Na veel leeswerk en hoofdpijn ben ik op de volgende vragen kunnen komen:
-
-VRAGEN EN input types
+Na veel leeswerk en hoofdpijn ben ik op de volgende vragen kunnen komen (zie project)
 
 ## Ontwikkeling
 
@@ -131,6 +129,13 @@ Deze heb ik van te voren in de HTML moeten stoppen en met de js-enabled class we
 Omdat het aantal van de value eigenlijk een string is moeten we gebruik maken van parseInt, om het aantal naar een integer te veranderen, daarmee kunnen we de aantal verkrijgers formulieren weergeven.
 
 Met een klein trukje door te kijken naar de prefix in de naam kunnen we in de html de name gebruiken als een soort filter
+
+### Responsivity
+
+Voor responsivity heb ik gebruik gemaakt van flex tot aan 786px, dan zet ik een grid in met 1fr fr
+
+![Bezigmetopnemen2025-05-07051759-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3e736eb8-489e-4d56-83df-53d6353d4600)
+
 
 ### Reflectie
 
