@@ -121,6 +121,9 @@ Om de gebruiker zijn progress te behouden slaan we de antwoorden op in Local Sto
 
 ### Aantal formulieren
 
+![Bezigmetopnemen2025-05-07051351-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/281b8642-47de-4510-b1b9-44e04b9fd857)
+
+
 Een stapje verder dan een vraag conditioneel weergeven is het aantal erbij mixen. De context van de vraag gaat over het aantal verkrijgers en aan de hand van het aantal krijg je het aantal formulieren te zien.
 
 Deze heb ik van te voren in de HTML moeten stoppen en met de js-enabled class weer verstopt. Via deze manier is er een fallback als JavaScript niet mocht werken, dan wordt er toch 5 formulieren weergegeven.
